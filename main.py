@@ -1,8 +1,3 @@
-"""
-Marvin with a simple menu to start up with.
-Marvin doesnt do anything, just presents a menu with some choices.
-You should add functinoality to Marvin.
-"""
 import marvin
 import inventory
 
