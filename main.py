@@ -1,5 +1,6 @@
 import marvin
 import inventory
+import quote
 
 robotino_image = r"""
 
@@ -85,6 +86,18 @@ while True:
             drop_item = choice[9:]
             inventory.replace_content(drop_item)
             print(inventory.read_inv())
+            
+    elif "citat" in make_lower:
+        print(quote.read_citation())
+
+    elif "lunch" in make_lower:
+        print(quote.read_lunch())
+
+    elif "hej" in make_lower:
+        print(quote.read_hej())
+
+    elif "mat" in make_lower or "käk" in make_lower:
+        print(quote.read_mat())
 
     else:
         print("That is not a valid choice. You can only choose from the menu.")
