@@ -4,7 +4,9 @@ A program where you can get help by a robot
 
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from datetime import datetime
 import random
+import quote
 
 def menu():
     '''
@@ -158,3 +160,59 @@ def censur():
         i += 1
     new_censur += censur1
     print(new_censur)
+    
+def censur():
+    '''
+    prints "#" for all chars in word except last 4
+    '''
+    word = input("Give me a word to censur (has to be at least 5 chars long): ")
+    censur1 = word[-4:]
+    new_censur = ""
+    i = 0
+    while i < len(word) - 4:
+        new_censur += "#"
+        i += 1
+    new_censur += censur1
+    print(new_censur)
+
+
+def date_time():
+    """
+    Creates a sentence including many things.
+    Then writes it to file and finally call another function to read from that file.
+    """
+    now = datetime.now()
+    date_clean = now.strftime("%d/%m/%Y")
+    time_clean = now.strftime("%H:%M")
+    feeling_array = quote.feelings[random.randint(0, len(quote.feelings)-1)]
+    str1 = "Today's date is " + date_clean + " and the time is "
+    str2 = time_clean + ". My well being at the moment, since you ask, is: "
+    str3 = feeling_array
+    str4 = " But I don't really want to talk about it. What I can tell you, though, "
+    str5 = "is that my favourite number at the moment is "
+    str6 = str(quote.fav_number[random.randint(0, len(quote.fav_number) -1)])
+    str7 = " and a funny float number that comes first to my mind is "
+    str8 = str(quote.float_number[random.randint(0, len(quote.float_number) -1)])
+    str9 = "."
+    msg = str1 + str2 + str3 + str4 + str5 + str6 + str7 + str8 + str9
+
+    file_name = "get_string.txt"
+    content = open(file_name, "r")
+    if content != []:
+        open(file_name, "w").close()
+        with open(file_name, "w") as filehandle:
+            filehandle.write(msg)
+    else:
+        with open(file_name, "w") as filehandle:
+            filehandle.write(msg)
+
+    return read_msg()
+
+
+def read_msg():
+    """
+    reads msg from get_string.txt
+    """
+    f = open("get_string.txt", "r")
+    return f.read()
+
