@@ -1,2 +1,5 @@
 # Python-Robot
-An assistant robot written in Python
+Your future assistant! 
+
+
+(Will try to improve him continiously)
