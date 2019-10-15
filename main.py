@@ -36,6 +36,8 @@ while True:
 
     marvin.menu()
     choice = input("--> ")
+    
+    make_lower = choice.lower()
 
     if choice == "q" or choice == "Q":
         print("Bye, bye - and welcome back anytime!")
