@@ -26,9 +26,7 @@ robotino_image = r"""
 """
 
 """
-Its an eternal loop, until q is pressed.
-It should check the choice done by the user and call a appropriate
-function.
+It's an eternal loop, until q (exit) is pressed.
 """
 
 while True:
@@ -36,10 +34,8 @@ while True:
     print(robotino_image)
     print("Hi, my name is Robotino. I know it all. What can I do you for?")
 
-
     marvin.menu()
     choice = input("--> ")
-
 
     if choice == "q" or choice == "Q":
         print("Bye, bye - and welcome back anytime!")
@@ -87,8 +83,6 @@ while True:
             drop_item = choice[9:]
             inventory.replace_content(drop_item)
             print(inventory.read_inv())
-
-
 
     else:
         print("That is not a valid choice. You can only choose from the menu.")
